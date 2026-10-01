@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jard1terieur Le jardin d'intérieur sur mesure</title>
+<meta name="description" content="jard1terieur conçoit des espaces de culture intérieure sur mesure : chambres de culture, éclairage horticole, ventilation, filtration et accompagnement complet.">
+<meta name="theme-color" content="#050d08">
+<meta property="og:title" content="jard1terieur Le jardin d'intérieur sur mesure">
+<meta property="og:description" content="Vivre en ville ne doit pas être un frein pour cultiver chez soi. Installations horticoles d'intérieur sur mesure.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2365d56a'/%3E%3Ctext x='32' y='42' font-size='28' font-weight='900' text-anchor='middle' fill='%23050d08' font-family='sans-serif'%3Ej1%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"jard1terieur","description":"Jardinage urbain et installations horticoles d'intérieur sur mesure.","email":"jard1terieur@gmail.com"}
+</script>
+<style>
+:root{
+  --bg:#050d08; --bg2:#0a1710;
+  --card:rgba(14,31,20,.6); --card2:rgba(20,39,27,.5);
+  --text:#f2f7f1; --muted:#a3b4a6; --dim:#6d8172;
+  --mint:#caff9b; --leaf:#65d56a; --lime:#d9ff7a;
+  --line:rgba(202,255,155,.13); --line2:rgba(202,255,155,.28);
+  --shadow:0 30px 80px rgba(0,0,0,.45);
+  --r:24px; --max:1180px;
+  --font-d:"Fraunces",Georgia,serif;
+  --font-b:"Outfit",Inter,ui-sans-serif,system-ui,sans-serif;
+  --ease:cubic-bezier(.22,.9,.28,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-b);color:var(--text);background:var(--bg);
+  background-image:
+    radial-gradient(900px 500px at 10% -5%,rgba(101,213,106,.13),transparent 60%),
+    radial-gradient(700px 500px at 95% 25%,rgba(202,255,155,.07),transparent 60%),
+    radial-gradient(900px 600px at 50% 110%,rgba(66,150,74,.1),transparent 60%),
+    linear-gradient(160deg,#050d08,#0a1710 50%,#050f09);
+  min-height:100vh;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--mint);color:#06100a}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#07120c}
+::-webkit-scrollbar-thumb{background:#1d3a26;border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:#2b5737}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--mint);outline-offset:3px;border-radius:6px}
+.container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+
+/* ---- spotlight qui suit le pointeur ---- */
+.spotlight{position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(600px 400px at var(--mx,50%) var(--my,20%),rgba(202,255,155,.05),transparent 70%)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.032;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+
+/* ---- curseur ---- */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:200;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:6px;height:6px;background:var(--mint)}
+.cursor-ring{width:34px;height:34px;border:1px solid rgba(202,255,155,.4);transition:width .25s,height .25s,border-color .25s}
+body.cursor-hover .cursor-ring{width:52px;height:52px;border-color:rgba(202,255,155,.85)}
+@media(hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+
+
+/* ---- blog ---- */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.blog-card{overflow:hidden;cursor:pointer;transition:transform .35s var(--ease),border-color .35s,box-shadow .35s}
+.blog-card:hover{transform:translateY(-7px);border-color:rgba(202,255,155,.28);box-shadow:0 22px 55px rgba(0,0,0,.24)}
+.blog-visual{height:205px;position:relative;overflow:hidden;background:linear-gradient(145deg,#0d2416,#07110b);border-bottom:1px solid rgba(255,255,255,.06)}
+.blog-visual:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(202,255,155,.13),transparent 42%);pointer-events:none}
+.blog-tag{position:absolute;left:16px;top:15px;z-index:4;padding:6px 9px;border:1px solid rgba(202,255,155,.24);border-radius:999px;background:rgba(3,12,7,.58);color:var(--mint);font-size:.58rem;font-weight:900;letter-spacing:.15em}
+.blog-content{padding:21px}
+.blog-meta{display:block;color:#75917c;font-size:.59rem;font-weight:900;letter-spacing:.16em;margin-bottom:9px}
+.blog-content h3{font-size:1.18rem;line-height:1.2;margin:0 0 9px}
+.blog-content p{color:#8fa392;font-size:.83rem;line-height:1.65;margin:0 0 17px}
+.blog-open{border:0;background:none;padding:0;color:var(--mint);font:inherit;font-size:.74rem;font-weight:900;letter-spacing:.05em;cursor:pointer}
+.blog-open span{display:inline-block;margin-left:5px;transition:transform .25s}
+.blog-card:hover .blog-open span{transform:translateX(5px)}
+
+.sun-orb{position:absolute;width:135px;height:135px;border-radius:50%;right:26px;top:24px;background:radial-gradient(circle,#eaffc8 0,#baf58a 18%,rgba(202,255,155,.25) 42%,transparent 70%);filter:blur(.2px);box-shadow:0 0 55px rgba(202,255,155,.25)}
+.plant-mini{position:absolute;bottom:-3px;left:50%;width:90px;height:135px;transform:translateX(-50%)}
+.plant-mini:before{content:"";position:absolute;width:4px;height:125px;left:43px;bottom:0;background:#75a56b;border-radius:5px;transform:rotate(2deg)}
+.plant-mini i{position:absolute;width:42px;height:22px;border-radius:100% 0 100% 0;background:linear-gradient(135deg,#baff91,#477c4e);box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.plant-mini i:nth-child(1){left:1px;top:67px;transform:rotate(-27deg)}
+.plant-mini i:nth-child(2){right:0;top:50px;transform:scaleX(-1) rotate(-27deg)}
+.plant-mini i:nth-child(3){left:8px;top:35px;transform:rotate(-42deg) scale(.82)}
+.plant-mini i:nth-child(4){right:8px;top:22px;transform:scaleX(-1) rotate(-42deg) scale(.82)}
+
+.air-lines{position:absolute;inset:0}
+.air-lines i{position:absolute;width:170px;height:55px;border-top:1px solid rgba(202,255,155,.35);border-radius:50%;transform:rotate(-17deg);left:-15px}
+.air-lines i:nth-child(1){top:62px}
+.air-lines i:nth-child(2){top:91px;left:55px}
+.air-lines i:nth-child(3){top:120px;left:10px}
+.fan-icon{position:absolute;width:100px;height:100px;right:50px;top:53px;border:1px solid rgba(202,255,155,.25);border-radius:50%;box-shadow:0 0 30px rgba(202,255,155,.08)}
+.fan-icon:after{content:"";position:absolute;inset:43px;border:1px solid rgba(202,255,155,.55);border-radius:50%}
+.fan-icon b{position:absolute;width:29px;height:42px;left:35px;top:7px;border-radius:100% 10% 100% 10%;background:rgba(202,255,155,.22);transform-origin:50% 43px}
+.fan-icon b:nth-child(1){transform:rotate(0)}
+.fan-icon b:nth-child(2){transform:rotate(120deg)}
+.fan-icon b:nth-child(3){transform:rotate(240deg)}
+
+.drop{position:absolute;font-size:7rem;color:rgba(202,255,155,.12);left:25px;top:15px}
+.humidity-gauge{position:absolute;right:48px;top:44px;width:120px;height:120px;border-radius:50%;border:7px solid rgba(202,255,155,.1);border-top-color:var(--mint);border-right-color:rgba(202,255,155,.48);display:grid;place-content:center;text-align:center;box-shadow:0 0 35px rgba(202,255,155,.08)}
+.humidity-gauge span{font-size:2rem;font-weight:900}.humidity-gauge small{font-size:.8rem;color:var(--mint)}
+
+.equipment-cabinet{position:absolute;width:160px;height:145px;left:50%;bottom:-1px;transform:translateX(-50%);border:1px solid rgba(202,255,155,.35);border-radius:10px 10px 0 0;background:linear-gradient(180deg,rgba(28,59,35,.8),rgba(4,15,9,.95));box-shadow:0 -15px 50px rgba(202,255,155,.07)}
+.equipment-cabinet:before{content:"";position:absolute;left:12px;right:12px;top:12px;height:4px;background:var(--mint);box-shadow:0 45px 0 rgba(202,255,155,.2)}
+.equipment-cabinet span{position:absolute;left:26px;top:43px;width:108px;height:48px;border:1px solid rgba(202,255,155,.2);background:linear-gradient(180deg,rgba(202,255,155,.12),transparent)}
+.equipment-cabinet i{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--mint);left:34px;top:110px;box-shadow:45px 0 0 rgba(202,255,155,.35)}
+.equipment-cabinet b{position:absolute;width:35px;height:4px;background:rgba(202,255,155,.35);right:25px;top:114px}
+
+.chart-lines{position:absolute;left:28px;right:28px;bottom:37px;height:105px;border-left:1px solid rgba(202,255,155,.18);border-bottom:1px solid rgba(202,255,155,.18);background:repeating-linear-gradient(to top,transparent 0 24px,rgba(202,255,155,.06) 25px)}
+.chart-lines i{position:absolute;display:block;height:2px;background:var(--mint);transform-origin:left center;box-shadow:0 0 10px rgba(202,255,155,.35)}
+.chart-lines i:nth-child(1){width:68px;left:10px;bottom:23px;transform:rotate(-14deg)}
+.chart-lines i:nth-child(2){width:65px;left:75px;bottom:39px;transform:rotate(24deg)}
+.chart-lines i:nth-child(3){width:82px;left:138px;bottom:66px;transform:rotate(-22deg)}
+.sensor{position:absolute;right:33px;top:28px;width:58px;height:58px;border:1px solid rgba(202,255,155,.3);border-radius:50%;display:grid;place-items:center;color:var(--mint);font-size:1.6rem;box-shadow:0 0 25px rgba(202,255,155,.1)}
+
+.setup-room{position:absolute;inset:30px 45px 0;border:1px solid rgba(202,255,155,.22);border-bottom:0;transform:perspective(300px) rotateX(2deg);background:linear-gradient(145deg,rgba(202,255,155,.04),transparent)}
+.setup-room:before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1px solid rgba(202,255,155,.12)}
+.setup-room i{position:absolute;width:72px;height:105px;left:50%;bottom:0;transform:translateX(-50%);border:1px solid rgba(202,255,155,.25);border-radius:6px 6px 0 0}
+.setup-room b{position:absolute;width:90px;height:5px;background:var(--mint);left:50%;top:31px;transform:translateX(-50%);box-shadow:0 0 28px rgba(202,255,155,.25)}
+.setup-room span{position:absolute;width:100%;height:1px;bottom:35px;background:rgba(202,255,155,.12)}
+
+.blog-modal{position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:22px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s ease,visibility .35s ease}
+.blog-modal.open{opacity:1;visibility:visible;pointer-events:auto}
+.blog-modal-backdrop{position:absolute;inset:0;background:rgba(1,7,4,.76);backdrop-filter:blur(12px)}
+.blog-modal-panel{position:relative;z-index:1;width:min(820px,100%);max-height:min(88vh,760px);overflow:auto;background:linear-gradient(145deg,#0c1d12,#06100a);border:1px solid rgba(202,255,155,.18);border-radius:24px;box-shadow:0 30px 100px rgba(0,0,0,.55);transform:translateY(24px) scale(.97);transition:transform .4s var(--ease)}
+.blog-modal.open .blog-modal-panel{transform:none}
+.blog-modal-close{position:absolute;right:17px;top:15px;z-index:5;width:38px;height:38px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(0,0,0,.28);color:#eaffdf;font-size:1.5rem;cursor:pointer}
+.modal-visual{height:190px;border-bottom:1px solid rgba(255,255,255,.07);overflow:hidden}
+.modal-body{padding:30px 34px 36px}
+.modal-body h2{font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.08;margin:0 0 18px}
+.modal-body p{color:#9bb09f;line-height:1.75}
+.modal-body h4{margin:25px 0 7px;color:var(--mint);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.modal-body ul{padding-left:19px;color:#9bb09f;line-height:1.8}
+.modal-body .tip{margin-top:22px;padding:15px 17px;border:1px solid rgba(202,255,155,.13);border-radius:13px;background:rgba(202,255,155,.035);color:#c2d1c4}
+
+@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){
+  .blog-grid{grid-template-columns:1fr}
+  .blog-visual{height:190px}
+  .modal-body{padding:25px 21px 30px}
+}
+
+/* ---- préchargeur ---- */
+.loader{position:fixed;inset:0;z-index:300;background:#040b06;display:grid;place-items:center;transition:opacity .6s var(--ease),visibility .6s}
+.loader.done{opacity:0;visibility:hidden}
+.loader-inner{text-align:center}
+.loader-mark{width:74px;height:74px;margin:0 auto 18px;border-radius:22px;display:grid;place-items:center;font-weight:900;font-size:1.7rem;color:#06100a;background:linear-gradient(145deg,var(--mint),var(--leaf));animation:loaderPulse 1.4s ease-in-out infinite}
+@keyframes loaderPulse{50%{transform:scale(.92);box-shadow:0 0 60px rgba(101,213,106,.4)}}
+.loader-bar{width:170px;height:2px;margin:14px auto 0;background:rgba(202,255,155,.12);border-radius:2px;overflow:hidden}
+.loader-bar i{display:block;height:100%;width:40%;background:var(--mint);border-radius:2px;animation:loadSlide 1.1s ease-in-out infinite}
+@keyframes loadSlide{0%{transform:translateX(-110%)}100%{transform:translateX(280%)}}
+
+/* ---- barre de progression ---- */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;background:linear-gradient(90deg,var(--leaf),var(--mint));box-shadow:0 0 14px rgba(202,255,155,.5)}
+
+/* ---- header ---- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(5,14,9,.6);border-bottom:1px solid rgba(255,255,255,.05);transition:.3s}
+header.scrolled{background:rgba(4,11,7,.85)}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:height .3s}
+header.scrolled nav{height:64px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.03em;font-size:1.12rem}
+.brand-mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,var(--mint),var(--leaf));color:#07100c;font-weight:900;box-shadow:0 0 26px rgba(101,213,106,.28);transition:transform .3s var(--ease)}
+.brand:hover .brand-mark{transform:rotate(-8deg) scale(1.06)}
+.brand em{font-style:normal;color:var(--mint)}
+.navlinks{display:flex;gap:26px;color:#b9c8bc;font-size:.9rem}
+.navlinks a{position:relative;padding:4px 0;transition:color .2s}
+.navlinks a:after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:var(--mint);transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease)}
+.navlinks a:hover{color:#fff}
+.navlinks a:hover:after{transform:scaleX(1);transform-origin:left}
+.nav-cta{padding:11px 18px;border-radius:999px;border:1px solid var(--line2);background:rgba(101,213,106,.09);color:var(--mint);font-weight:700;font-size:.86rem;transition:.25s}
+.nav-cta:hover{background:var(--mint);color:#06100a;box-shadow:0 10px 30px rgba(121,214,107,.25)}
+
+/* ---- héro ---- */
+.hero{padding:168px 0 84px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;color:var(--mint);background:rgba(101,213,106,.07);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--leaf);box-shadow:0 0 14px var(--leaf);animation:blink 2.2s infinite}
+@keyframes blink{50%{opacity:.35}}
+h1,h2{font-family:var(--font-d)}
+h1{margin-top:24px;font-size:clamp(3.2rem,7vw,6.2rem);line-height:.95;letter-spacing:-.03em;font-weight:560}
+h1 em,h2 em{font-style:italic;color:var(--mint);font-weight:480}
+.hero-sub{margin-top:26px;color:var(--muted);font-size:1.1rem;line-height:1.75;max-width:620px}
+.hero-sub strong{color:var(--mint);font-weight:700}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:34px}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 22px;border-radius:14px;font-weight:800;font-size:.95rem;transition:transform .25s var(--ease),box-shadow .25s;will-change:transform}
+.btn-primary{background:linear-gradient(145deg,var(--mint),#8fe07a);color:#06100a;box-shadow:0 14px 34px rgba(121,214,107,.2)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(121,214,107,.3)}
+.btn-ghost{border:1px solid var(--line);background:rgba(255,255,255,.03);color:#e6efe7}
+.btn-ghost:hover{background:rgba(255,255,255,.07);transform:translateY(-3px)}
+.hero-meta{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap}
+.hero-meta div{display:flex;align-items:center;gap:8px;color:var(--dim);font-size:.8rem;font-weight:700}
+.hero-meta i{width:5px;height:5px;border-radius:50%;background:var(--leaf)}
+
+/* ---- jardin interactif ---- */
+.visual{min-height:600px;position:relative;display:grid;place-items:center;perspective:1200px;isolation:isolate}
+.glow{position:absolute;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,rgba(101,213,106,.2),rgba(101,213,106,.05) 45%,transparent 70%);filter:blur(20px);animation:heroGlow 5s ease-in-out infinite}
+@keyframes heroGlow{0%,100%{transform:scale(.92);opacity:.75}50%{transform:scale(1.08);opacity:1}}
+.ambient-orbit{position:absolute;border:1px solid rgba(202,255,155,.1);border-radius:50%;pointer-events:none}
+.orbit-a{width:500px;height:210px;animation:orbitFloat 12s ease-in-out infinite}
+.orbit-b{width:420px;height:160px;animation:orbitFloat 9s ease-in-out infinite reverse;opacity:.5}
+@keyframes orbitFloat{50%{transform:rotate(10deg) scale(1.05)}}
+
+.garden-panel{position:relative;z-index:3;width:min(500px,100%);border:1px solid rgba(202,255,155,.16);border-radius:30px;overflow:hidden;background:linear-gradient(150deg,rgba(17,38,25,.9),rgba(4,13,8,.94));box-shadow:var(--shadow),0 0 70px rgba(101,213,106,.07),inset 0 1px rgba(255,255,255,.06);backdrop-filter:blur(20px);transform:rotateY(-4deg) rotateX(2deg);transition:transform .5s var(--ease)}
+.garden-panel:hover{transform:none}
+.panel-topbar{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 17px;border-bottom:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.02)}
+.live-status{display:flex;align-items:center;gap:8px;color:#c7d8c9;font-size:.64rem;font-weight:900;letter-spacing:.14em}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#a9f28d;box-shadow:0 0 0 5px rgba(169,242,141,.08),0 0 15px rgba(169,242,141,.6);animation:livePulse 2s infinite}
+@keyframes livePulse{50%{opacity:.35;transform:scale(.72)}}
+.panel-reset{width:30px;height:30px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#a9bea9;cursor:pointer;transition:.25s;font-size:1rem}
+.panel-reset:hover{color:var(--mint);border-color:var(--line2);transform:rotate(-180deg)}
+.garden-stage{height:380px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 40%,rgba(154,239,120,.08),transparent 25%),linear-gradient(180deg,rgba(17,43,27,.2),rgba(2,9,5,.3));cursor:grab}
+.grid-floor{position:absolute;left:9%;right:9%;bottom:14px;height:105px;transform:perspective(180px) rotateX(58deg);transform-origin:bottom;background-image:linear-gradient(rgba(202,255,155,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(202,255,155,.08) 1px,transparent 1px);background-size:34px 24px;mask-image:linear-gradient(to top,black,transparent);opacity:.6}
+.light-beam{position:absolute;left:23%;top:56px;width:54%;height:230px;background:linear-gradient(180deg,rgba(217,255,122,.09),transparent 80%);clip-path:polygon(14% 0,86% 0,100% 100%,0 100%);filter:blur(2px);transition:.5s}
+.hanging-lamp{position:absolute;left:50%;top:0;transform:translateX(-50%);width:170px;height:92px}
+.lamp-cable{display:block;width:1px;height:22px;background:rgba(255,255,255,.25);margin:auto}
+.lamp-body{height:24px;border-radius:0 0 18px 18px;background:linear-gradient(180deg,#f8fff0,#c9e7b2 60%,#8bb879);box-shadow:0 0 28px rgba(217,255,122,.42),0 8px 25px rgba(0,0,0,.25);display:flex;justify-content:space-evenly;align-items:center;padding:0 20px}
+.lamp-body i{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 9px #fff}
+
+.plant-visual{position:absolute;left:50%;bottom:36px;width:265px;height:290px;transform:translateX(-50%);transform-origin:50% 100%;transition:transform .7s var(--ease),filter .5s;filter:drop-shadow(0 24px 22px rgba(0,0,0,.3))}
+.botanical-svg{position:absolute;left:0;top:0;width:260px;height:300px;overflow:visible;z-index:2;transform-origin:50% 82%;transition:transform .7s var(--ease),filter .5s}
+.simple-trunk,.simple-branch{fill:none;stroke:url(#simpleStem);stroke-linecap:round;stroke-linejoin:round}
+.simple-trunk{stroke-width:7}.simple-branch{stroke-width:5}
+.simple-leaf>path:first-child,.simple-top>path:first-child{fill:url(#simpleLeaf);stroke:rgba(24,74,35,.38);stroke-width:1;stroke-linejoin:round}
+.simple-leaf .leaf-line,.simple-top .leaf-line{fill:none;stroke:rgba(235,255,222,.55);stroke-width:1.1;stroke-linecap:round}
+.garden-panel.mode-light .simple-leaf>path:first-child,.garden-panel.mode-light .simple-top>path:first-child{fill:#8be66d}
+.garden-panel.mode-light .botanical-svg{transform:scale(1.04)}
+.garden-panel.mode-night .botanical-svg{filter:brightness(.7) saturate(.85);transform:scale(.97)}
+.garden-panel.mode-air .simple-leaf>path{transform-box:fill-box;transform-origin:0 0}
+.garden-panel.mode-air .leaf-1>path,.garden-panel.mode-air .leaf-3>path,.garden-panel.mode-air .leaf-5>path{animation:swayL 2.2s ease-in-out infinite}
+.garden-panel.mode-air .leaf-2>path,.garden-panel.mode-air .leaf-4>path,.garden-panel.mode-air .leaf-6>path{animation:swayR 2.35s ease-in-out infinite}
+@keyframes swayL{50%{transform:rotate(-7deg)}}
+@keyframes swayR{50%{transform:rotate(7deg)}}
+.garden-panel.mode-light .light-beam{opacity:1;transform:scaleY(1.12)}
+.garden-panel.mode-air .light-beam{opacity:.7}
+.garden-panel.mode-night .light-beam{opacity:.2}
+.garden-panel.mode-night .particle{animation-duration:9s;opacity:.25}
+.garden-panel.mode-light .particle{animation-duration:4s}
+.garden-panel.mode-light .lamp-body{box-shadow:0 0 42px rgba(217,255,122,.85),0 8px 25px rgba(0,0,0,.25)}
+.garden-panel.mode-night .lamp-body{filter:brightness(.55)}
+.soil-bed{position:absolute;left:39px;bottom:63px;width:187px;height:45px;border-radius:50%;background:radial-gradient(ellipse at center,#5d3c25,#24170e 72%);box-shadow:0 7px 16px rgba(0,0,0,.3)}
+.soil-bed span{position:absolute;width:4px;height:4px;border-radius:50%;background:#9b704c}
+.soil-bed span:nth-child(1){left:30%;top:42%}.soil-bed span:nth-child(2){left:59%;top:30%}.soil-bed span:nth-child(3){left:74%;top:55%}
+.smart-pot{position:absolute;left:45px;bottom:0;width:180px;height:94px;filter:drop-shadow(0 14px 14px rgba(0,0,0,.28))}
+.pot-rim{position:absolute;left:0;right:0;top:0;height:18px;border-radius:50%;background:linear-gradient(180deg,#ad8057,#70472e);border:1px solid rgba(255,230,190,.18)}
+.pot-body{position:absolute;left:10px;right:10px;top:8px;bottom:0;clip-path:polygon(2% 0,98% 0,85% 100%,15% 100%);background:linear-gradient(90deg,#3e2b20,#936442 45%,#513727);border-radius:0 0 22px 22px}
+.pot-label{position:absolute;left:50%;top:33px;transform:translateX(-50%);color:#dff4d2;font-size:.72rem;font-weight:900;letter-spacing:.08em}
+.sensor{position:absolute;z-index:4;display:flex;align-items:center;gap:8px;padding:9px 11px;border:1px solid rgba(202,255,155,.13);border-radius:14px;background:rgba(3,12,7,.7);backdrop-filter:blur(12px);box-shadow:0 10px 25px rgba(0,0,0,.2)}
+.sensor b{display:block;font-size:.72rem;color:#e9f8e8}
+.sensor small{display:block;color:#718678;font-size:.55rem;margin-top:1px}
+.sensor-icon{width:27px;height:27px;display:grid;place-items:center;border-radius:9px;color:var(--mint);background:rgba(101,213,106,.1);font-weight:900}
+.sensor-temp{left:18px;top:72px}.sensor-humidity{right:18px;top:126px}
+.floating-chip{position:absolute;z-index:5;display:flex;align-items:center;gap:7px;padding:8px 10px;border-radius:999px;border:1px solid rgba(202,255,155,.14);background:rgba(4,14,8,.75);backdrop-filter:blur(10px);color:#9caf9f;font-size:.58rem;font-weight:800;animation:chipFloat 5s ease-in-out infinite}
+.floating-chip b{color:#dff4d4;font-size:.6rem}
+.chip-light{left:26px;bottom:68px}.chip-air{right:24px;bottom:68px;animation-delay:-1.7s}.chip-growth{right:20px;top:52px;animation-delay:-3.2s}
+@keyframes chipFloat{50%{transform:translateY(-7px)}}
+.particle{position:absolute;width:4px;height:4px;border-radius:50%;background:#d9ffb8;box-shadow:0 0 10px #d9ffb8;opacity:.5;animation:particleMove 6s linear infinite}
+.p1{left:18%;bottom:25%;animation-delay:-1s}.p2{left:31%;bottom:39%;animation-delay:-4s}.p3{right:24%;bottom:28%;animation-delay:-2s}.p4{right:16%;bottom:47%;animation-delay:-5s}.p5{left:12%;top:46%;animation-delay:-3s}.p6{right:37%;top:28%;animation-delay:-1.8s}
+@keyframes particleMove{0%{transform:translateY(15px);opacity:0}20%{opacity:.6}80%{opacity:.5}100%{transform:translateY(-80px);opacity:0}}
+.garden-controls{padding:16px 18px 14px;border-top:1px solid rgba(255,255,255,.05)}
+.control-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
+.mini-label{display:block;color:#718678;font-size:.55rem;font-weight:900;letter-spacing:.14em;margin-bottom:3px}
+.control-heading strong{font-size:.9rem;color:#e7f1e7}
+.control-value{font-size:.85rem;font-weight:900;color:var(--mint)}
+.control-bars{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.mode-btn{border:1px solid var(--line);border-radius:12px;padding:9px 5px;background:rgba(255,255,255,.02);color:#8fa291;cursor:pointer;transition:.22s}
+.mode-btn span{display:block;font-size:1rem;margin-bottom:3px}
+.mode-btn small{display:block;font-size:.56rem;font-weight:800}
+.mode-btn:hover{border-color:var(--line2);color:#dcebdc;transform:translateY(-2px)}
+.mode-btn.active{color:#07100c;background:var(--mint);border-color:var(--mint);box-shadow:0 8px 22px rgba(121,214,107,.16)}
+.panel-footer{display:flex;justify-content:space-between;gap:12px;padding:10px 18px;border-top:1px solid rgba(255,255,255,.04);color:#65796b;font-size:.56rem;font-weight:800;letter-spacing:.04em}
+.panel-footer i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--leaf);margin-right:5px;box-shadow:0 0 8px var(--leaf)}
+.data-pop{animation:dataPop .28s ease}
+@keyframes dataPop{0%{opacity:.35;transform:translateY(2px) scale(.97)}100%{opacity:1;transform:none}}
+
+/* ---- marquee ---- */
+.marquee{overflow:hidden;border-block:1px solid var(--line);background:rgba(255,255,255,.015);white-space:nowrap;position:relative;z-index:2}
+.marquee-track{display:inline-flex;gap:34px;padding:15px 0;animation:scroll 30s linear infinite;color:#9caf9f;font-size:.75rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.marquee-track span{color:var(--mint)}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---- sections ---- */
+section{padding:96px 0;position:relative;z-index:2}
+.kicker{color:var(--mint);font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;font-weight:900}
+h2{font-size:clamp(2.1rem,4.2vw,3.6rem);letter-spacing:-.025em;line-height:1.05;margin-top:10px;font-weight:560}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+.section-head p{max-width:470px;color:var(--muted);line-height:1.7}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---- cards effet spot ---- */
+.card{position:relative;background:linear-gradient(150deg,var(--card),rgba(8,18,12,.6));border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:0 15px 50px rgba(0,0,0,.18);overflow:hidden;transition:transform .4s var(--ease),border-color .4s}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(340px 220px at var(--mx,50%) var(--my,50%),rgba(202,255,155,.08),transparent 70%);opacity:0;transition:opacity .4s;pointer-events:none}
+.card:hover{transform:translateY(-6px);border-color:var(--line2)}
+.card:hover:before{opacity:1}
+
+/* ---- à propos ---- */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.about .card p{color:var(--muted);line-height:1.85}
+.about .card p strong{color:var(--text)}
+.quote{min-height:100%;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(150deg,rgba(101,213,106,.13),rgba(8,18,12,.6))}
+.quote-mark{font-family:var(--font-d);font-size:4.4rem;color:var(--mint);line-height:.6}
+.quote p{font-size:1.24rem;color:#eaf3eb;line-height:1.55;margin:22px 0;font-family:var(--font-d);font-style:italic;font-weight:420}
+.signature{color:var(--mint);font-weight:800;font-size:.9rem}
+
+/* ---- solutions ---- */
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.product{min-height:260px}
+.number{font-size:.72rem;color:#718276;font-weight:900;letter-spacing:.12em}
+.icon{width:50px;height:50px;margin:30px 0 22px;border-radius:16px;display:grid;place-items:center;font-size:1.35rem;background:rgba(101,213,106,.1);border:1px solid var(--line);color:var(--mint);transition:.35s var(--ease)}
+.product:hover .icon{transform:rotate(-8deg) scale(1.08);background:rgba(101,213,106,.18)}
+.product h3{font-size:1.16rem;margin-bottom:10px}
+.product p{font-size:.92rem;color:var(--muted);line-height:1.7}
+.product .go{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:.78rem;font-weight:800;color:var(--mint);opacity:0;transform:translateX(-6px);transition:.3s var(--ease)}
+.product:hover .go{opacity:1;transform:none}
+
+/* ---- avant / après ---- */
+.ba-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
+.ba-slider{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:420px;user-select:none}
+.ba-scene{position:absolute;inset:0;display:grid;place-items:center}
+.ba-before{background:linear-gradient(160deg,#0c0f0d,#141a15)}
+.ba-after{background:linear-gradient(160deg,#122b1a,#08130c);clip-path:inset(0 0 0 var(--split,50%))}
+.ba-after .miniroom{filter:brightness(1.15) saturate(1.25)}
+.miniroom{width:min(340px,80%);text-align:center}
+.miniroom .mr-icon{font-size:3rem;margin-bottom:14px;filter:grayscale(1) opacity(.5)}
+.ba-after .miniroom .mr-icon{filter:none}
+.miniroom .mr-title{font-family:var(--font-d);font-size:1.4rem;margin-bottom:8px;color:#5c6a5f}
+.ba-after .miniroom .mr-title{color:var(--mint)}
+.miniroom .mr-sub{color:#4c5a4e;font-size:.85rem;line-height:1.6}
+.ba-after .miniroom .mr-sub{color:#b9cabb}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--split,50%);width:2px;background:var(--mint);box-shadow:0 0 20px rgba(202,255,155,.6);z-index:3;pointer-events:none}
+.ba-handle:after{
+  content:"◂ ▸";position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  background:var(--mint);color:#06100a;font-size:.7rem;font-weight:900;
+  padding:8px 10px;border-radius:999px;white-space:nowrap;letter-spacing:2px;
+  box-shadow:0 0 0 5px rgba(202,255,155,.10),0 8px 24px rgba(0,0,0,.28);
+  pointer-events:none;
+}
+.ba-range{
+  position:absolute;inset:0;width:100%;height:100%;
+  opacity:0;cursor:ew-resize;z-index:4;
+  margin:0;padding:0;
+  -webkit-appearance:none;appearance:none;
+}
+.ba-range::-webkit-slider-thumb{width:44px;height:44px;-webkit-appearance:none;appearance:none;cursor:ew-resize}
+.ba-range::-moz-range-thumb{width:44px;height:44px;border:0;cursor:ew-resize}
+.ba-tag{position:absolute;top:16px;padding:6px 12px;border-radius:999px;font-size:.62rem;font-weight:900;letter-spacing:.12em;z-index:2}
+.ba-tag.b{left:16px;background:rgba(255,255,255,.06);color:#8b978d;border:1px solid rgba(255,255,255,.08)}
+.ba-tag.a{right:16px;background:rgba(202,255,155,.12);color:var(--mint);border:1px solid var(--line2)}
+.ba-copy{display:flex;flex-direction:column;justify-content:center;gap:16px}
+.ba-copy h3{font-family:var(--font-d);font-size:1.9rem;letter-spacing:-.02em;font-weight:560}
+.ba-copy p{color:var(--muted);line-height:1.75}
+.ba-list{display:grid;gap:10px}
+.ba-list div{display:flex;gap:10px;align-items:center;color:#cdd9cf;font-size:.9rem}
+.ba-list i{color:var(--leaf);font-style:normal;font-weight:900}
+
+/* ---- stats ---- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{text-align:center;padding:34px 18px}
+.stat b{display:block;font-family:var(--font-d);font-size:clamp(2.2rem,4vw,3.1rem);letter-spacing:-.03em;color:var(--mint);font-weight:560}
+.stat span{display:block;margin-top:8px;color:var(--muted);font-size:.82rem;line-height:1.5}
+
+/* ---- méthode ---- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.step .num{font-size:2.4rem;font-weight:900;color:rgba(185,242,154,.3);letter-spacing:-.06em;font-family:var(--font-d)}
+.step h3{margin:22px 0 10px;font-size:1.14rem}
+.step p{font-size:.92rem;color:var(--muted);line-height:1.7}
+
+/* ---- pourquoi ---- */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.why-item{display:flex;gap:18px;align-items:flex-start;padding:24px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.02);transition:.3s}
+.why-item:hover{border-color:var(--line2);background:rgba(101,213,106,.04)}
+.check{width:34px;height:34px;flex:0 0 34px;border-radius:11px;display:grid;place-items:center;background:rgba(101,213,106,.12);color:var(--mint);font-weight:900}
+.why h3{font-size:1rem;margin-bottom:7px}
+.why p{color:var(--muted);line-height:1.65;font-size:.9rem}
+
+/* ---- témoignages ---- */
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.testi p{font-family:var(--font-d);font-style:italic;font-size:1.05rem;line-height:1.6;color:#e6efe7}
+.testi .who{display:flex;align-items:center;gap:12px;margin-top:22px}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#06100a;background:linear-gradient(145deg,var(--mint),var(--leaf))}
+.who b{display:block;font-size:.88rem}
+.who small{color:var(--dim);font-size:.72rem}
+.stars{color:var(--lime);letter-spacing:2px;font-size:.8rem;margin-bottom:14px}
+
+/* ---- quiz / configurateur ---- */
+.quiz{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.quiz-copy p{color:var(--muted);line-height:1.75;margin-top:12px}
+.quiz-box{padding:24px}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.quiz-btn{border:1px solid var(--line);background:rgba(255,255,255,.03);color:#eaf3eb;padding:13px;border-radius:13px;cursor:pointer;font-weight:700;transition:.25s}
+.quiz-btn:hover{border-color:var(--line2);background:rgba(101,213,106,.09);transform:translateY(-2px)}
+.quiz-btn.picked{background:rgba(101,213,106,.14);border-color:var(--mint);color:var(--mint)}
+.quiz-result{margin-top:16px;color:var(--mint);font-weight:800;min-height:26px;font-size:.95rem}
+.tip{border-left:3px solid var(--leaf);padding:12px 16px;margin-top:22px;background:rgba(101,213,106,.06);color:#c2d0c4;font-size:.85rem;line-height:1.6;border-radius:0 12px 12px 0}
+.calculator{display:grid;grid-template-columns:1fr .8fr;gap:18px}
+.range-row{margin:22px 0}
+.range-row label{display:flex;justify-content:space-between;color:#cdd9cf;font-size:.9rem;margin-bottom:10px}
+.range-row output{font-weight:800;color:var(--mint)}
+input[type=range]{width:100%;accent-color:var(--leaf);height:22px;cursor:pointer}
+.result-card{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:250px;background:linear-gradient(150deg,rgba(101,213,106,.13),rgba(255,255,255,.02))}
+.result-number{font-family:var(--font-d);font-size:4.2rem;line-height:1;font-weight:600;letter-spacing:-.04em;color:var(--mint)}
+.result-card p{color:var(--muted);max-width:280px;line-height:1.6;margin-top:12px;font-size:.9rem}
+
+/* ---- timeline ---- */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.timeline .card{padding:24px}
+.time{font-size:.68rem;color:var(--mint);font-weight:900;letter-spacing:.14em}
+.timeline h3{margin:14px 0 8px;font-size:1.05rem}
+.timeline p{color:var(--muted);font-size:.85rem;line-height:1.6}
+
+/* ---- FAQ ---- */
+.faq{max-width:820px;margin-inline:auto;display:grid;gap:12px}
+.faq-item{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.02);overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:var(--line2)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;background:none;border:none;color:var(--text);font-size:1rem;font-weight:750;text-align:left;cursor:pointer}
+.faq-q .chev{color:var(--mint);transition:transform .35s var(--ease);font-size:1.1rem}
+.faq-item.open .chev{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+.faq-a p{padding:0 24px 22px;color:var(--muted);line-height:1.75;font-size:.92rem}
+
+/* ---- contact ---- */
+.contact{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:32px;padding:52px;display:grid;grid-template-columns:1fr 1fr;gap:46px;background:linear-gradient(120deg,rgba(101,213,106,.12),rgba(255,255,255,.02))}
+.contact:before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(101,213,106,.09);filter:blur(75px);right:-90px;top:-140px}
+.contact h2{margin-bottom:6px}
+.contact>p{color:var(--muted);line-height:1.75;margin-top:14px;max-width:520px}
+.contact-links{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+.contact-link{padding:15px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(4,13,8,.45);font-weight:750;transition:.25s;display:block}
+.contact-link:hover{border-color:var(--line2);background:rgba(101,213,106,.07);transform:translateX(4px)}
+.contact-link small{display:block;color:#718276;font-size:.68rem;text-transform:uppercase;letter-spacing:.13em;margin-bottom:4px}
+.pform{display:grid;gap:12px;position:relative;z-index:1}
+.pform input,.pform select,.pform textarea{width:100%;padding:14px 16px;border-radius:13px;border:1px solid var(--line);background:rgba(4,13,8,.5);color:var(--text);font-family:inherit;font-size:.92rem;transition:border-color .25s;resize:vertical}
+.pform input::placeholder,.pform textarea::placeholder{color:#5d7161}
+.pform input:focus,.pform select:focus,.pform textarea:focus{border-color:var(--mint);outline:none}
+.pform select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23caff9b' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.form-note{font-size:.72rem;color:var(--dim)}
+
+/* ---- footer ---- */
+footer{padding:40px 0 60px;color:#718276;font-size:.82rem;border-top:1px solid rgba(255,255,255,.05);position:relative;z-index:2}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+.footer-brand{color:#b8c5ba;font-weight:800}
+.footer-links{display:flex;gap:20px}
+.footer-links a:hover{color:var(--mint)}
+.to-top{position:fixed;right:22px;bottom:22px;z-index:110;width:46px;height:46px;border-radius:14px;border:1px solid var(--line2);background:rgba(6,17,10,.8);backdrop-filter:blur(10px);color:var(--mint);font-size:1.1rem;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:.35s var(--ease)}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--mint);color:#06100a}
+
+.float-leaf{position:absolute;color:rgba(202,255,155,.16);font-size:32px;animation:float 6s ease-in-out infinite;pointer-events:none;z-index:1}
+@keyframes float{50%{transform:translateY(-18px) rotate(12deg);opacity:.6}}
+
+/* ---- responsive ---- */
+@media(max-width:1000px){
+  .hero-grid,.about,.why,.contact,.quiz,.calculator,.ba-wrap{grid-template-columns:1fr}
+  .products,.steps,.testis{grid-template-columns:1fr 1fr}
+  .stats,.timeline{grid-template-columns:1fr 1fr}
+  .hero{padding-top:138px}
+  .visual{min-height:540px}
+  .section-head{display:block}
+  .section-head p{margin-top:16px}
+}
+@media(max-width:640px){
+  .container{width:min(100% - 26px,var(--max))}
+  .navlinks{display:none}
+  nav{height:66px}
+  .nav-cta{padding:9px 13px;font-size:.78rem}
+  .hero{padding:120px 0 60px}
+  h1{font-size:3.1rem}
+  .hero-sub{font-size:1rem}
+  section{padding:66px 0}
+  .products,.steps,.testis,.stats,.timeline{grid-template-columns:1fr}
+  .card,.contact{padding:24px}
+  .quiz-options{grid-template-columns:1fr}
+  .garden-stage{height:330px}
+  .garden-panel{transform:none;border-radius:24px}
+  .plant-visual{transform:translateX(-50%) scale(.85)}
+  .chip-growth{display:none}
+  .ba-slider{min-height:340px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-mark">j1</div>
+    <div style="font-weight:800;letter-spacing:-.02em">jard<em style="color:var(--mint);font-style:normal">1</em>terieur</div>
+    <div class="loader-bar"><i></i></div>
+  </div>
+</div>
+<div class="progress" id="progress"></div>
+<div class="spotlight" id="spotlight"></div>
+<div class="grain"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<header id="header">
+  <nav class="container">
+    <a class="brand" href="#top" aria-label="jard1terieur accueil">
+      <div class="brand-mark">j1</div>
+      <span>jard<em>1</em>terieur</span>
+    </a>
+    <div class="navlinks">
+      <a href="#univers">L'univers</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#blog">Guides</a>
+      <a href="#methode">Méthode</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact">Parlons de votre projet</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- ================= HÉRO ================= -->
+  <section class="hero">
+    <div class="float-leaf" style="left:2%;top:20%">❧</div>
+    <div class="float-leaf" style="right:4%;top:34%;animation-delay:-2s">❧</div>
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Jardinage urbain · Sur mesure</div>
+        <h1>Votre jardin.<br><em>À l'intérieur.</em></h1>
+        <p class="hero-sub">
+          Vivre en ville ne doit pas être un frein pour cultiver chez soi.
+          <strong>jard1terieur</strong> imagine des espaces de culture intérieure pensés autour
+          de votre logement, de vos contraintes, de votre budget et de vos objectifs.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary magnetic" href="#contact">Construire mon projet →</a>
+          <a class="btn btn-ghost magnetic" href="#solutions">Découvrir les solutions</a>
+        </div>
+        <div class="hero-meta">
+          <div><i></i> Conseil personnalisé</div>
+          <div><i></i> Matériel sélectionné</div>
+          <div><i></i> Support dans la durée</div>
+        </div>
+      </div>
+
+      <div class="visual" aria-label="Aperçu interactif d'un jardin intérieur">
+        <div class="ambient-orbit orbit-a"></div>
+        <div class="ambient-orbit orbit-b"></div>
+        <div class="glow"></div>
+
+        <div class="garden-panel" id="gardenPanel">
+          <div class="panel-topbar">
+            <div class="live-status"><span class="live-dot"></span> ESPACE ACTIF</div>
+            <button class="panel-reset" id="gardenReset" type="button" aria-label="Réinitialiser la vue">↻</button>
+          </div>
+
+          <div class="garden-stage" id="gardenStage">
+            <div class="grid-floor"></div>
+            <div class="light-beam"></div>
+
+            <div class="sensor sensor-temp">
+              <span class="sensor-icon">°</span>
+              <div><b id="tempValue">23.4°C</b><small>température</small></div>
+            </div>
+            <div class="sensor sensor-humidity">
+              <span class="sensor-icon">◌</span>
+              <div><b id="humidityValue">64%</b><small>humidité</small></div>
+            </div>
+
+            <div class="hanging-lamp">
+              <span class="lamp-cable"></span>
+              <div class="lamp-body"><i></i><i></i><i></i></div>
+            </div>
+
+            <div class="plant-visual" id="plantVisual">
+              <svg class="botanical-svg" viewBox="0 0 260 300" aria-hidden="true">
+                <defs>
+                  <linearGradient id="simpleStem" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#2f7439"/><stop offset=".5" stop-color="#79cf61"/><stop offset="1" stop-color="#3e8c45"/>
+                  </linearGradient>
+                  <linearGradient id="simpleLeaf" x1="0" y1="1" x2="1" y2="0">
+                    <stop offset="0" stop-color="#3f9849"/><stop offset=".55" stop-color="#78d862"/><stop offset="1" stop-color="#b9f58e"/>
+                  </linearGradient>
+                </defs>
+                <path class="simple-trunk" d="M130 238 C130 205 130 175 130 145 C130 112 131 82 130 48 C130 38 130 30 130 23"/>
+                <path class="simple-branch" d="M130 193 L91 165"/><path class="simple-branch" d="M130 145 L91 118"/><path class="simple-branch" d="M130 96 L99 72"/>
+                <path class="simple-branch" d="M130 177 L169 149"/><path class="simple-branch" d="M130 128 L169 101"/><path class="simple-branch" d="M130 78 L160 53"/>
+                <g class="simple-leaf leaf-1" transform="translate(91 165) rotate(-24)"><path d="M0 0 C-17 -3 -34 -13 -48 -29 C-29 -31 -10 -22 0 0Z"/><path class="leaf-line" d="M0 0 C-18 -9 -34 -19 -47 -28"/></g>
+                <g class="simple-leaf leaf-2" transform="translate(91 118) rotate(-20)"><path d="M0 0 C-16 -3 -31 -12 -43 -27 C-26 -29 -9 -20 0 0Z"/><path class="leaf-line" d="M0 0 C-16 -8 -30 -18 -42 -26"/></g>
+                <g class="simple-leaf leaf-3" transform="translate(99 72) rotate(-18)"><path d="M0 0 C-14 -3 -27 -11 -37 -24 C-22 -26 -8 -18 0 0Z"/><path class="leaf-line" d="M0 0 C-14 -8 -26 -16 -36 -23"/></g>
+                <g class="simple-leaf leaf-4" transform="translate(169 149) rotate(24)"><path d="M0 0 C17 -3 34 -13 48 -29 C29 -31 10 -22 0 0Z"/><path class="leaf-line" d="M0 0 C18 -9 34 -19 47 -28"/></g>
+                <g class="simple-leaf leaf-5" transform="translate(169 101) rotate(20)"><path d="M0 0 C16 -3 31 -12 43 -27 C26 -29 9 -20 0 0Z"/><path class="leaf-line" d="M0 0 C16 -8 30 -18 42 -26"/></g>
+                <g class="simple-leaf leaf-6" transform="translate(160 53) rotate(18)"><path d="M0 0 C14 -3 27 -11 37 -24 C22 -26 8 -18 0 0Z"/><path class="leaf-line" d="M0 0 C14 -8 26 -16 36 -23"/></g>
+                <g class="simple-top" transform="translate(130 23)"><path d="M0 0 C-5 -11 -4 -21 2 -29 C9 -18 7 -8 0 0Z"/><path class="leaf-line" d="M0 0 C1 -10 2 -18 2 -27"/></g>
+              </svg>
+              <div class="soil-bed"><span></span><span></span><span></span></div>
+              <div class="smart-pot"><div class="pot-rim"></div><div class="pot-body"></div><div class="pot-label">j1</div></div>
+            </div>
+
+            <div class="floating-chip chip-light">✦ <span>Lumière</span><b id="lightValue">92%</b></div>
+            <div class="floating-chip chip-air">≈ <span>Air</span><b id="airValue">OPTIMAL</b></div>
+            <div class="floating-chip chip-growth">↗ <span>Confort</span><b id="growthValue">+18%</b></div>
+
+            <div class="particle p1"></div><div class="particle p2"></div><div class="particle p3"></div>
+            <div class="particle p4"></div><div class="particle p5"></div><div class="particle p6"></div>
+          </div>
+
+          <div class="garden-controls">
+            <div class="control-heading">
+              <div><span class="mini-label">MICROCLIMAT</span><strong id="modeTitle">Équilibre végétal</strong></div>
+              <span class="control-value" id="comfortValue">96%</span>
+            </div>
+            <div class="control-bars" role="group" aria-label="Modes du microclimat">
+              <button class="mode-btn active" type="button" data-mode="equilibre"><span>◒</span><small>Équilibre</small></button>
+              <button class="mode-btn" type="button" data-mode="lumiere"><span>✦</span><small>Lumière</small></button>
+              <button class="mode-btn" type="button" data-mode="air"><span>≈</span><small>Circulation</small></button>
+              <button class="mode-btn" type="button" data-mode="nuit"><span>☾</span><small>Repos</small></button>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <span><i></i> Système adaptatif</span>
+            <span id="modeHint">La plante s'adapte en temps réel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>🌱 Cultiver en ville</span> · Lumière · Air · Mesure · Sur-mesure ·
+      <span>🌿 Votre espace, votre jardin</span> · Conseil · Installation · Support ·
+      <span>🌱 Cultiver en ville</span> · Lumière · Air · Mesure · Sur-mesure ·
+      <span>🌿 Votre espace, votre jardin</span> · Conseil · Installation · Support ·
+    </div>
+  </div>
+
+  <!-- ================= À PROPOS ================= -->
+  <section id="univers">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">À propos</div>
+          <h2>La passion du <em>jardinage urbain.</em></h2>
+        </div>
+        <p>Une approche simple : comprendre votre espace avant de choisir votre matériel.</p>
+      </div>
+      <div class="about">
+        <div class="card reveal">
+          <p>Moi, c'est <strong>Henrick</strong>, 33 ans, passionné de jardinage en milieu urbain. De cette passion est née <strong>jard1terieur</strong> : une entreprise dédiée à toutes celles et ceux qui souhaitent créer, développer et optimiser leur propre espace de culture en intérieur.</p>
+          <br>
+          <p>Parce que chaque logement, chaque pièce et chaque projet présente des contraintes uniques, nous refusons les kits génériques mal adaptés. Nous sélectionnons du matériel horticole rigoureusement choisi et concevons des installations adaptées à votre réalité.</p>
+        </div>
+        <div class="card quote reveal">
+          <div class="quote-mark">“</div>
+          <p>Un espace bien pensé, c'est la rencontre entre la technologie horticole, la précision et le plaisir de cultiver.</p>
+          <div class="signature">Henrick · fondateur de jard1terieur</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AVANT / APRÈS ================= -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">La transformation</div>
+          <h2>Avant <em>/</em> après jard1terieur.</h2>
+        </div>
+        <p>Glissez le curseur pour visualiser ce qu'un espace bien pensé change au quotidien.</p>
+      </div>
+      <div class="ba-wrap">
+        <div class="ba-slider reveal" id="baSlider" style="--split:50%">
+          <div class="ba-scene ba-before">
+            <span class="ba-tag b">AVANT</span>
+            <div class="miniroom">
+              <div class="mr-icon">🥀</div>
+              <div class="mr-title">Un coin perdu</div>
+              <div class="mr-sub">Lumière faible, air stagnant,<br>espace inexploité.</div>
+            </div>
+          </div>
+          <div class="ba-scene ba-after">
+            <span class="ba-tag a">APRÈS</span>
+            <div class="miniroom">
+              <div class="mr-icon">🌿</div>
+              <div class="mr-title">Un écosystème vivant</div>
+              <div class="mr-sub">Microclimat maîtrisé,<br>lumière optimisée, plantes épanouies.</div>
+            </div>
+          </div>
+          <div class="ba-handle"></div>
+          <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après">
+        </div>
+        <div class="ba-copy reveal">
+          <h3>Le même espace.<br>Une autre vie.</h3>
+          <p>Notre travail ne consiste pas à empiler du matériel, mais à orchestrer structure, lumière, air et mesure pour qu'un simple mètre carré devienne un véritable terrain de culture.</p>
+          <div class="ba-list">
+            <div><i>✓</i> Diagnostic précis de vos contraintes réelles</div>
+            <div><i>✓</i> Équipement cohérent, rien de superflu</div>
+            <div><i>✓</i> Réglages affinés après installation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOLUTIONS ================= -->
+  <section id="solutions">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">Nos solutions</div>
+          <h2>Tout l'écosystème <em>horticole.</em></h2>
+        </div>
+        <p>Du contenant à la gestion de l'environnement, chaque élément est pensé pour fonctionner ensemble.</p>
+      </div>
+      <div class="products">
+        <article class="card product reveal"><div class="number">01 / STRUCTURE</div><div class="icon">▣</div><h3>Chambres de culture</h3><p>Structures robustes, étanches à la lumière et isolées, adaptées aux dimensions de votre espace.</p></article>
+        <article class="card product reveal"><div class="number">02 / LUMIÈRE</div><div class="icon">✦</div><h3>Éclairage horticole performant</h3><p>Panneaux LED et rampes de dernière génération aux spectres optimisés, avec maîtrise de la consommation et de la chaleur.</p></article>
+        <article class="card product reveal"><div class="number">03 / AIR</div><div class="icon">≈</div><h3>Ventilation &amp; extraction</h3><p>Extracteurs silencieux, gaines isolées et brassage de l'air pour créer un microclimat stable et maîtrisé.</p></article>
+        <article class="card product reveal"><div class="number">04 / DISCRÉTION</div><div class="icon">◌</div><h3>Filtration des odeurs</h3><p>Filtres à charbon actif à haute efficacité et gestion du flux d'air pour préserver un environnement discret et sain.</p></article>
+        <article class="card product reveal"><div class="number">05 / MESURE</div><div class="icon">⌁</div><h3>Accessoires &amp; instrumentation</h3><p>pH, EC, automatisation des cycles et matériel de support pour mieux comprendre et piloter votre espace.</p></article>
+        <article class="card product reveal"><div class="number">06 / CONFIGURATION</div><div class="icon">＋</div><h3>Configurations personnalisées</h3><p>Une combinaison cohérente des équipements selon vos volumes disponibles, votre budget et vos objectifs.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="stats">
+        <div class="card stat reveal"><b><span class="count" data-count="200">0</span>+</b><span>configurations imaginées et conseillées</span></div>
+        <div class="card stat reveal"><b><span class="count" data-count="100">0</span>%</b><span>de projets sur mesure, zéro kit générique</span></div>
+        <div class="card stat reveal"><b><span class="count" data-count="48">0</span>h</b><span>délai de réponse moyen à votre demande</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MÉTHODE ================= -->
+  <section id="methode" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">Accompagnement</div>
+          <h2>Du premier échange au <em>réglage final.</em></h2>
+        </div>
+        <p>Un interlocuteur unique pour transformer un espace disponible en installation claire, fonctionnelle et maîtrisée.</p>
+      </div>
+      <div class="steps">
+        <article class="card step reveal"><div class="num">01</div><h3>Conseil &amp; diagnostic</h3><p>Étude de l'espace disponible, analyse des contraintes électriques et thermiques, puis sélection de l'équipement le plus pertinent.</p></article>
+        <article class="card step reveal"><div class="num">02</div><h3>Conception sur mesure</h3><p>Assemblage et paramétrage personnalisés pour obtenir un espace de culture fonctionnel, sécurisé et discret.</p></article>
+        <article class="card step reveal"><div class="num">03</div><h3>Suivi &amp; support technique</h3><p>Un interlocuteur à votre écoute pour répondre à vos questions, ajuster vos réglages et vous accompagner dans la durée.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= POURQUOI ================= -->
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">Pourquoi jard1terieur ?</div>
+          <h2>Le sur-mesure, <em>sans complexité.</em></h2>
+        </div>
+      </div>
+      <div class="why">
+        <div class="why-item reveal"><div class="check">✓</div><div><h3>L'expertise du terrain</h3><p>Des conseils avisés issus d'une réelle pratique du jardinage d'intérieur.</p></div></div>
+        <div class="why-item reveal"><div class="check">✓</div><div><h3>Le sur-mesure accessible</h3><p>Des configurations ajustables qui s'intègrent aussi bien dans un studio que dans une pièce dédiée.</p></div></div>
+        <div class="why-item reveal"><div class="check">✓</div><div><h3>Un service complet</h3><p>Du matériel fiable combiné à un accompagnement humain et réactif.</p></div></div>
+        <div class="why-item reveal"><div class="check">✓</div><div><h3>Une vision globale</h3><p>Structure, lumière, air, mesure et réglages sont pensés comme un ensemble cohérent.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <!-- ================= BLOG / GUIDES ================= -->
+  <section id="blog" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">Guides &amp; conseils</div>
+          <h2>Comprendre son jardin<br><em>avant de le cultiver.</em></h2>
+        </div>
+        <p>Des articles courts, visuels et pratiques pour mieux comprendre la lumière, l'air, l'humidité et le matériel d'un espace de culture intérieur.</p>
+      </div>
+
+      <div class="blog-grid">
+        <article class="card blog-card reveal" data-article="light">
+          <div class="blog-visual visual-light">
+            <div class="sun-orb"></div>
+            <div class="plant-mini"><i></i><i></i><i></i><i></i></div>
+            <span class="blog-tag">LUMIÈRE</span>
+          </div>
+          <div class="blog-content">
+            <span class="blog-meta">GUIDE · 4 MIN</span>
+            <h3>Comprendre la lumière pour ses plantes</h3>
+            <p>Positionnement, intensité, durée et rôle d'un éclairage horticole.</p>
+            <button class="blog-open" type="button">Lire le guide <span>→</span></button>
+          </div>
+        </article>
+
+        <article class="card blog-card reveal" data-article="air">
+          <div class="blog-visual visual-air">
+            <div class="air-lines"><i></i><i></i><i></i></div>
+            <div class="fan-icon"><b></b><b></b><b></b></div>
+            <span class="blog-tag">AIR</span>
+          </div>
+          <div class="blog-content">
+            <span class="blog-meta">GUIDE · 5 MIN</span>
+            <h3>Pourquoi faire circuler l'air ?</h3>
+            <p>Brassage, extraction et circulation : les bases d'un microclimat stable.</p>
+            <button class="blog-open" type="button">Lire le guide <span>→</span></button>
+          </div>
+        </article>
+
+        <article class="card blog-card reveal" data-article="humidity">
+          <div class="blog-visual visual-humidity">
+            <div class="drop">◦</div>
+            <div class="humidity-gauge"><span>64</span><small>%</small></div>
+            <span class="blog-tag">HUMIDITÉ</span>
+          </div>
+          <div class="blog-content">
+            <span class="blog-meta">PRATIQUE · 4 MIN</span>
+            <h3>Maîtriser l'humidité sans compliquer son espace</h3>
+            <p>Mesure, ventilation et petits réglages pour garder un environnement cohérent.</p>
+            <button class="blog-open" type="button">Lire l'article <span>→</span></button>
+          </div>
+        </article>
+
+        <article class="card blog-card reveal" data-article="equipment">
+          <div class="blog-visual visual-equipment">
+            <div class="equipment-cabinet">
+              <span></span><i></i><b></b>
+            </div>
+            <span class="blog-tag">MATÉRIEL</span>
+          </div>
+          <div class="blog-content">
+            <span class="blog-meta">DÉCRYPTAGE · 6 MIN</span>
+            <h3>À quoi sert chaque équipement ?</h3>
+            <p>LED, extracteur, ventilateur, filtre, capteurs : le rôle de chaque élément.</p>
+            <button class="blog-open" type="button">Découvrir <span>→</span></button>
+          </div>
+        </article>
+
+        <article class="card blog-card reveal" data-article="measurement">
+          <div class="blog-visual visual-measure">
+            <div class="chart-lines"><i></i><i></i><i></i></div>
+            <div class="sensor">◎</div>
+            <span class="blog-tag">MESURE</span>
+          </div>
+          <div class="blog-content">
+            <span class="blog-meta">GUIDE · 5 MIN</span>
+            <h3>Mesurer avant de modifier</h3>
+            <p>Pourquoi température, humidité et lumière donnent de meilleurs repères que l'intuition seule.</p>
+            <button class="blog-open" type="button">Lire le guide <span>→</span></button>
+          </div>
+        </article>
+
+        <article class="card blog-card reveal" data-article="setup">
+          <div class="blog-visual visual-setup">
+            <div class="setup-room"><i></i><b></b><span></span></div>
+            <span class="blog-tag">INSTALLATION</span>
+          </div>
+          <div class="blog-content">
+            <span class="blog-meta">CHECKLIST · 5 MIN</span>
+            <h3>Bien préparer son espace intérieur</h3>
+            <p>Une checklist simple pour partir sur une installation propre, pratique et évolutive.</p>
+            <button class="blog-open" type="button">Voir la checklist <span>→</span></button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BLOG MODAL ================= -->
+  <div class="blog-modal" id="blogModal" aria-hidden="true">
+    <div class="blog-modal-backdrop" data-close-blog></div>
+    <article class="blog-modal-panel" role="dialog" aria-modal="true" aria-labelledby="blogModalTitle">
+      <button class="blog-modal-close" type="button" aria-label="Fermer" data-close-blog>×</button>
+      <div class="modal-visual" id="modalVisual"></div>
+      <div class="modal-body">
+        <span class="blog-meta" id="modalMeta"></span>
+        <h2 id="blogModalTitle"></h2>
+        <div id="modalContent"></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ================= QUIZ ================= -->
+
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="card quiz reveal">
+        <div class="quiz-copy">
+          <div class="kicker">Mini diagnostic</div>
+          <h2 style="font-size:2rem">Quel jardinier urbain <em>êtes-vous ?</em></h2>
+          <p>Répondez à une question pour découvrir le profil qui correspond le mieux à votre façon d'aborder votre espace de culture.</p>
+          <div class="tip">Aucun compte, aucun formulaire : juste un petit moment ludique.</div>
+        </div>
+        <div class="quiz-box">
+          <strong>Votre priorité serait plutôt…</strong>
+          <div class="quiz-options">
+            <button class="quiz-btn" data-result="Le 🌱 Minimaliste, efficacité simplicité et espace optimisé.">Gagner de la place</button>
+            <button class="quiz-btn" data-result="Le ⚙️ Technicien, mesurer régler et comprendre chaque paramètre.">Tout contrôler</button>
+            <button class="quiz-btn" data-result="Le 💡 Curieux, tester apprendre et faire évoluer l'installation.">Expérimenter</button>
+            <button class="quiz-btn" data-result="Le 🪴 Passionné, créer un vrai petit univers végétal chez soi.">Créer un univers</button>
+          </div>
+          <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONFIGURATEUR ================= -->
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">Votre espace</div>
+          <h2>Imaginez votre <em>configuration.</em></h2>
+        </div>
+        <p>Un configurateur ludique pour visualiser comment la surface disponible influence votre projet.</p>
+      </div>
+      <div class="calculator reveal">
+        <div class="card">
+          <div class="range-row">
+            <label><span>Largeur disponible</span><output id="widthValue">100 cm</output></label>
+            <input id="widthRange" type="range" min="50" max="300" value="100" step="10" aria-label="Largeur disponible">
+          </div>
+          <div class="range-row">
+            <label><span>Profondeur disponible</span><output id="depthValue">60 cm</output></label>
+            <input id="depthRange" type="range" min="40" max="150" value="60" step="10" aria-label="Profondeur disponible">
+          </div>
+          <div class="range-row">
+            <label><span>Hauteur disponible</span><output id="heightValue">160 cm</output></label>
+            <input id="heightRange" type="range" min="100" max="240" value="160" step="10" aria-label="Hauteur disponible">
+          </div>
+        </div>
+        <div class="card result-card">
+          <div class="kicker">Volume indicatif</div>
+          <div class="result-number"><span id="volumeValue">0,96</span></div>
+          <p>m³ d'espace à exploiter.<br>La configuration réelle dépendra ensuite de votre projet et de vos contraintes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE ================= -->
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">La méthode</div>
+          <h2>Une installation qui <em>évolue avec vous.</em></h2>
+        </div>
+      </div>
+      <div class="timeline">
+        <article class="card reveal"><div class="time">ÉTAPE 01</div><h3>Observer</h3><p>Comprendre l'espace, ses contraintes et les objectifs du projet.</p></article>
+        <article class="card reveal"><div class="time">ÉTAPE 02</div><h3>Concevoir</h3><p>Associer structure, lumière, air et instrumentation de manière cohérente.</p></article>
+        <article class="card reveal"><div class="time">ÉTAPE 03</div><h3>Installer</h3><p>Mettre en place et paramétrer les différents éléments de l'installation.</p></article>
+        <article class="card reveal"><div class="time">ÉTAPE 04</div><h3>Affiner</h3><p>Observer les résultats, ajuster les réglages et faire évoluer l'ensemble.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal" style="justify-content:center;text-align:center">
+        <div>
+          <div class="kicker">Questions fréquentes</div>
+          <h2>Tout ce que vous <em>vous demandez.</em></h2>
+        </div>
+      </div>
+      <div class="faq reveal">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Par où commencer si je n'ai jamais cultivé en intérieur ?<span class="chev">＋</span></button>
+          <div class="faq-a"><p>Par un simple échange. Décrivez-nous votre espace, votre budget et vos envies : nous vous orientons vers une configuration réaliste et progressive, sans matériel superflu. L'objectif est de démarrer simplement et d'évoluer pas à pas.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Travaillez-vous avec tous les types de logements ?<span class="chev">＋</span></button>
+          <div class="faq-a"><p>Oui : studio, appartement, maison ou pièce dédiée. Chaque projet fait l'objet d'un diagnostic précis (dimensions, électricité, ventilation, lumière naturelle) afin de proposer une solution qui respecte votre environnement.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Quelle différence avec un kit tout-en-un du commerce ?<span class="chev">＋</span></button>
+          <div class="faq-a"><p>Les kits génériques sont conçus pour un cas moyen qui n'existe pas. Chez jard1terieur, chaque équipement est choisi pour votre situation réelle : qualité de la lumière, niveau sonore, consommation, discrétion. Vous ne payez que ce qui a du sens.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Proposez-vous un suivi après l'installation ?<span class="chev">＋</span></button>
+          <div class="faq-a"><p>C'est même l'un de nos piliers. Vous gardez un interlocuteur unique pour ajuster vos réglages, répondre à vos questions et faire évoluer votre installation au fil du temps, notamment via notre communauté Discord.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Comment se passe le premier contact ?<span class="chev">＋</span></button>
+          <div class="faq-a"><p>Par email ou via le Discord : vous nous décrivez votre projet, nous revenons vers vous sous 48 h avec un premier avis et, si vous le souhaitez, une proposition de configuration adaptée à votre espace et votre budget.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" style="padding-top:0">
+    <div class="container">
+      <div class="contact reveal">
+        <div>
+          <div class="kicker">Votre projet</div>
+          <h2>Parlons de votre <em>jardin intérieur.</em></h2>
+          <p>Décrivez-nous votre espace, vos contraintes et ce que vous souhaitez mettre en place. Réponse sous 48 h, sans engagement.</p>
+          <div class="contact-links" style="margin-top:24px">
+            <a class="contact-link" href="mailto:jard1terieur@gmail.com"><small>Email</small>jard1terieur@gmail.com</a>
+            <a class="contact-link" href="https://discord.gg/zMeV4fWXZp" target="_blank" rel="noopener noreferrer"><small>Communauté</small>Rejoindre le Discord →</a>
+          </div>
+        </div>
+        <form class="pform" id="projectForm">
+          <input type="text" name="name" placeholder="Votre prénom" required autocomplete="given-name">
+          <input type="email" name="email" placeholder="Votre email" required autocomplete="email">
+          <select name="space" required aria-label="Type d'espace">
+            <option value="" disabled selected>Type d'espace</option>
+            <option>Studio / petit espace</option>
+            <option>Appartement</option>
+            <option>Maison</option>
+            <option>Pièce dédiée</option>
+            <option>Autre / je ne sais pas encore</option>
+          </select>
+          <textarea name="message" rows="4" placeholder="Décrivez votre projet en quelques mots…" required></textarea>
+          <button class="btn btn-primary" type="submit">Envoyer ma demande →</button>
+          <span class="form-note">Votre message ouvrira votre logiciel email ! aucune donnée n'est stockée.</span>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">jard<em style="color:var(--mint);font-style:normal">1</em>terieur</div>
+    <div class="footer-links">
+      <a href="#univers">L'univers</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div>Le jardin d'intérieur sur mesure · © <span id="year"></span></div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Retour en haut">↑</button>
+
+<script>
+(function(){
+  "use strict";
+  const $ = s => document.querySelector(s);
+  const $$ = s => Array.from(document.querySelectorAll(s));
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Préchargeur ---------- */
+  const loader = $('#loader');
+  const hideLoader = () => loader && loader.classList.add('done');
+  window.addEventListener('load', () => setTimeout(hideLoader, 350));
+  setTimeout(hideLoader, 2600); // sécurité
+
+  /* ---------- Année ---------- */
+  $('#year').textContent = new Date().getFullYear();
+
+  /* ---------- Barre de progression + header + bouton haut ---------- */
+  const progress = $('#progress'), header = $('#header'), toTop = $('#toTop');
+  let ticking = false;
+  function onScroll(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+      header.classList.toggle('scrolled', h.scrollTop > 30);
+      toTop.classList.toggle('show', h.scrollTop > 600);
+      ticking = false;
+    });
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  toTop.addEventListener('click', () => window.scrollTo({top:0, behavior: reduced ? 'auto' : 'smooth'}));
+
+  /* ---------- Spotlight + curseur + cartes ---------- */
+  const fine = window.matchMedia('(pointer:fine)').matches;
+  const spot = $('#spotlight');
+  if(fine && !reduced){
+    let mx = innerWidth/2, my = 200, rx = mx, ry = my;
+    const dot = $('#cursorDot'), ring = $('#cursorRing');
+    document.addEventListener('pointermove', e => {
+      mx = e.clientX; my = e.clientY;
+      spot.style.setProperty('--mx', mx + 'px');
+      spot.style.setProperty('--my', my + 'px');
+      dot.style.transform = `translate(${mx}px,${my}px) translate(-50%,-50%)`;
+      const t = e.target;
+      document.body.classList.toggle('cursor-hover', !!t.closest('a,button,input,select,textarea,.ba-range'));
+    }, {passive:true});
+    (function loop(){
+      rx += (mx - rx) * .16; ry += (my - ry) * .16;
+      ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
+      requestAnimationFrame(loop);
+    })();
+    // halo qui suit la souris sur les cartes
+    $$('.card').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      }, {passive:true});
+    });
+  }
+
+  /* ---------- Boutons magnétiques ---------- */
+  if(fine && !reduced){
+    $$('.magnetic').forEach(btn => {
+      btn.addEventListener('pointermove', e => {
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width/2, y = e.clientY - r.top - r.height/2;
+        btn.style.transform = `translate(${x*.18}px,${y*.28}px)`;
+      });
+      btn.addEventListener('pointerleave', () => btn.style.transform = '');
+    });
+  }
+
+  /* ---------- Révélation au scroll ---------- */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((en, i) => {
+      if(en.isIntersecting){
+        en.target.style.transitionDelay = Math.min(i * 70, 280) + 'ms';
+        en.target.classList.add('visible');
+        io.unobserve(en.target);
+      }
+    });
+  }, {threshold:.12});
+  $$('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- Compteurs ---------- */
+  const counterIO = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if(!en.isIntersecting) return;
+      const el = en.target, end = +el.dataset.count, dur = 1400, t0 = performance.now();
+      (function tick(t){
+        const p = Math.min((t - t0) / dur, 1);
+        el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
+        if(p < 1) requestAnimationFrame(tick);
+      })(t0);
+      counterIO.unobserve(el);
+    });
+  }, {threshold:.5});
+  $$('.count').forEach(el => counterIO.observe(el));
+
+  /* ---------- Jardin interactif ---------- */
+  const gardenPanel = $('#gardenPanel'), gardenStage = $('#gardenStage'), plantVisual = $('#plantVisual');
+  const modeTitle = $('#modeTitle'), comfortValue = $('#comfortValue'), modeHint = $('#modeHint');
+  const liveData = {
+    temp: $('#tempValue'), humidity: $('#humidityValue'), light: $('#lightValue'),
+    air: $('#airValue'), growth: $('#growthValue')
+  };
+  const modes = {
+    equilibre:{title:'Équilibre végétal', comfort:'96%', temp:'23.4°C', humidity:'64%', light:'92%', air:'OPTIMAL', growth:'+18%', hint:'La plante s\'adapte en temps réel', cls:''},
+    lumiere:{title:'Lumière optimisée', comfort:'92%', temp:'24.1°C', humidity:'59%', light:'100%', air:'STABLE', growth:'+26%', hint:'Feuilles ouvertes vers la lumière', cls:'mode-light'},
+    air:{title:'Circulation active', comfort:'94%', temp:'22.8°C', humidity:'57%', light:'86%', air:'MAX', growth:'+21%', hint:'Feuilles en mouvement doux', cls:'mode-air'},
+    nuit:{title:'Mode repos', comfort:'88%', temp:'20.6°C', humidity:'70%', light:'28%', air:'DOUX', growth:'+9%', hint:'Croissance ralentie · lumière douce', cls:'mode-night'}
+  };
+  function animateData(el, v){
+    if(!el) return;
+    el.textContent = v;
+    el.classList.remove('data-pop'); void el.offsetWidth; el.classList.add('data-pop');
+  }
+  function setMode(mode){
+    const d = modes[mode] || modes.equilibre;
+    gardenPanel.classList.remove('mode-light','mode-air','mode-night');
+    if(d.cls) gardenPanel.classList.add(d.cls);
+    modeTitle.textContent = d.title;
+    comfortValue.textContent = d.comfort;
+    modeHint.textContent = d.hint;
+    animateData(liveData.temp, d.temp);
+    animateData(liveData.humidity, d.humidity);
+    animateData(liveData.light, d.light);
+    animateData(liveData.air, d.air);
+    animateData(liveData.growth, d.growth);
+    $$('.mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+  }
+  $$('.mode-btn').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+  $('#gardenReset').addEventListener('click', () => { setMode('equilibre'); plantVisual.style.transform = 'translateX(-50%)'; });
+  if(fine && !reduced){
+    gardenStage.addEventListener('pointermove', e => {
+      const r = gardenStage.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      plantVisual.style.transform = `translateX(-50%) rotateY(${x*7}deg) rotateX(${y*-4}deg) translate(${x*5}px,${y*3}px)`;
+    });
+    gardenStage.addEventListener('pointerleave', () => plantVisual.style.transform = 'translateX(-50%)');
+  }
+  setMode('equilibre');
+
+  /* ---------- Avant / Après ---------- */
+  const baSlider = $('#baSlider'), baRange = $('#baRange');
+
+  function setBeforeAfter(value){
+    const v = Math.max(0, Math.min(100, Number(value) || 0));
+    baRange.value = v;
+    baSlider.style.setProperty('--split', v + '%');
+  }
+
+  // Le curseur natif reste accessible au clavier et fonctionne sur tous les navigateurs.
+  baRange.addEventListener('input', () => setBeforeAfter(baRange.value));
+
+  // Glisser directement n'importe où dans la zone "Avant / Après".
+  let draggingBA = false;
+
+  function updateBAFromPointer(e){
+    const r = baSlider.getBoundingClientRect();
+    const x = Math.max(0, Math.min(r.width, e.clientX - r.left));
+    setBeforeAfter((x / r.width) * 100);
+  }
+
+  baSlider.addEventListener('pointerdown', e => {
+    // On garde le comportement natif si l'utilisateur attrape le range lui-même.
+    draggingBA = true;
+    baSlider.setPointerCapture?.(e.pointerId);
+    updateBAFromPointer(e);
+    baSlider.style.cursor = 'ew-resize';
+  });
+
+  baSlider.addEventListener('pointermove', e => {
+    if(!draggingBA) return;
+    updateBAFromPointer(e);
+  });
+
+  const stopBADrag = e => {
+    draggingBA = false;
+    if(e?.pointerId != null){
+      try{ baSlider.releasePointerCapture?.(e.pointerId); }catch(_){}
+    }
+  };
+
+  baSlider.addEventListener('pointerup', stopBADrag);
+  baSlider.addEventListener('pointercancel', stopBADrag);
+  baSlider.addEventListener('lostpointercapture', () => { draggingBA = false; });
+
+  setBeforeAfter(baRange.value);
+
+
+  /* ---------- Blog / articles ---------- */
+  const blogModal = $('#blogModal');
+  const modalTitle = $('#blogModalTitle');
+  const modalMeta = $('#modalMeta');
+  const modalContent = $('#modalContent');
+  const modalVisual = $('#modalVisual');
+
+  const articles = {
+    light:{
+      title:'Comprendre la lumière pour ses plantes',
+      meta:'GUIDE · 4 MIN · LUMIÈRE',
+      visual:'visual-light',
+      content:`
+        <p>La lumière est le moteur énergétique de la plante. Dans un espace intérieur, l'objectif n'est pas simplement de mettre « beaucoup » de lumière, mais de créer un éclairage cohérent avec la plante, son emplacement et la durée d'exposition.</p>
+        <h4>Les 3 questions à se poser</h4>
+        <ul>
+          <li>La source éclaire-t-elle réellement la surface cultivée ?</li>
+          <li>La durée d'éclairage est-elle régulière ?</li>
+          <li>La chaleur produite reste-t-elle compatible avec l'espace ?</li>
+        </ul>
+        <h4>Le matériel</h4>
+        <p>Une LED horticole adaptée permet de distribuer la lumière de façon plus homogène. La hauteur de suspension et l'orientation comptent autant que la puissance annoncée.</p>
+        <div class="tip">Conseil jard1terieur : avant de changer de lampe, observez la plante, mesurez l'environnement et vérifiez la couverture réelle de la zone.</div>`
+    },
+    air:{
+      title:"Pourquoi faire circuler l'air ?",
+      meta:'GUIDE · 5 MIN · AIR',
+      visual:'visual-air',
+      content:`
+        <p>L'air en mouvement aide à homogénéiser le microclimat autour des plantes. Le brassage ne remplace pas l'extraction : ces deux fonctions répondent à des besoins différents.</p>
+        <h4>Brassage</h4>
+        <p>Un ventilateur déplace l'air à l'intérieur de l'espace. Il limite les zones trop immobiles et aide à répartir température et humidité.</p>
+        <h4>Extraction</h4>
+        <p>L'extracteur renouvelle l'air de l'espace et permet de mieux évacuer chaleur et humidité lorsque l'installation le nécessite.</p>
+        <h4>À retenir</h4>
+        <ul>
+          <li>Éviter un flux permanent trop agressif directement sur les feuilles.</li>
+          <li>Prévoir une circulation homogène plutôt qu'un seul point de ventilation.</li>
+          <li>Adapter le débit à la taille et à la configuration de l'espace.</li>
+        </ul>
+        <div class="tip">Un bon système d'air est discret : on cherche surtout la stabilité, pas un courant d'air maximal.</div>`
+    },
+    humidity:{
+      title:"Maîtriser l'humidité sans compliquer son espace",
+      meta:'PRATIQUE · 4 MIN · HUMIDITÉ',
+      visual:'visual-humidity',
+      content:`
+        <p>L'humidité varie naturellement avec la température, l'arrosage, la ventilation et la densité végétale. Un capteur simple permet déjà de comprendre ce qui se passe réellement.</p>
+        <h4>Commencer par mesurer</h4>
+        <p>Placez le capteur dans la zone représentative de l'espace, plutôt qu'au contact immédiat d'une source d'air ou de chaleur.</p>
+        <h4>Si l'humidité monte</h4>
+        <ul>
+          <li>Vérifier la circulation de l'air.</li>
+          <li>Observer les horaires d'arrosage.</li>
+          <li>Contrôler la température et les zones confinées.</li>
+        </ul>
+        <div class="tip">Le chiffre seul ne raconte pas toute l'histoire : recherchez surtout une évolution stable et compréhensible dans le temps.</div>`
+    },
+    equipment:{
+      title:'À quoi sert chaque équipement ?',
+      meta:'DÉCRYPTAGE · 6 MIN · MATÉRIEL',
+      visual:'visual-equipment',
+      content:`
+        <p>Une installation intérieure peut sembler complexe au premier regard. En réalité, chaque élément répond à une fonction précise : créer, déplacer ou mesurer les conditions nécessaires aux plantes.</p>
+        <h4>LED horticole</h4><p>Elle fournit la lumière nécessaire à la croissance dans un espace où la lumière naturelle ne suffit pas.</p>
+        <h4>Ventilateur</h4><p>Il brasse l'air et homogénéise l'environnement autour des plantes.</p>
+        <h4>Extracteur</h4><p>Il renouvelle l'air lorsque l'espace nécessite une évacuation de chaleur ou d'humidité.</p>
+        <h4>Filtration</h4><p>Un filtre adapté peut être intégré au circuit d'air selon les besoins de l'installation.</p>
+        <h4>Capteurs</h4><p>Température, humidité et autres mesures permettent de piloter l'espace à partir de données plutôt que de simples impressions.</p>
+        <div class="tip">Le bon matériel n'est pas celui qui ajoute le plus de fonctions : c'est celui qui répond réellement aux contraintes de l'espace.</div>`
+    },
+    measurement:{
+      title:'Mesurer avant de modifier',
+      meta:'GUIDE · 5 MIN · MESURE',
+      visual:'visual-measure',
+      content:`
+        <p>Avant de déplacer une lampe ou d'ajouter un équipement, prendre quelques mesures permet de comprendre le problème. C'est la base d'un réglage propre et progressif.</p>
+        <h4>Les données utiles</h4>
+        <ul>
+          <li>Température de l'espace.</li>
+          <li>Humidité relative.</li>
+          <li>Niveau de lumière à différents endroits.</li>
+          <li>Évolution de ces valeurs dans la journée.</li>
+        </ul>
+        <h4>Pourquoi suivre dans le temps ?</h4>
+        <p>Une mesure isolée peut être trompeuse. Une série de mesures montre les variations et permet d'identifier les moments où l'environnement change réellement.</p>
+        <div class="tip">Petite règle pratique : changez une chose à la fois lorsque c'est possible, puis observez le résultat.</div>`
+    },
+    setup:{
+      title:'Bien préparer son espace intérieur',
+      meta:'CHECKLIST · 5 MIN · INSTALLATION',
+      visual:'visual-setup',
+      content:`
+        <p>Une bonne installation commence avant même de choisir le matériel. Dimensions, alimentation électrique, ventilation, accès et entretien doivent être pensés ensemble.</p>
+        <h4>Checklist de départ</h4>
+        <ul>
+          <li>Mesurer largeur, profondeur et hauteur disponibles.</li>
+          <li>Identifier les prises et contraintes électriques.</li>
+          <li>Prévoir un accès simple pour l'entretien.</li>
+          <li>Définir où seront placés les capteurs.</li>
+          <li>Anticiper le passage et la circulation de l'air.</li>
+          <li>Garder suffisamment de place pour faire évoluer l'installation.</li>
+        </ul>
+        <div class="tip">Un espace bien pensé doit rester accessible. L'entretien devient beaucoup plus simple lorsque chaque élément est placé avec une fonction claire.</div>`
+    }
+  };
+
+  function openArticle(key){
+    const article = articles[key];
+    if(!article) return;
+    modalTitle.textContent = article.title;
+    modalMeta.textContent = article.meta;
+    modalContent.innerHTML = article.content;
+    modalVisual.className = 'modal-visual ' + article.visual;
+    blogModal.classList.add('open');
+    blogModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeArticle(){
+    blogModal.classList.remove('open');
+    blogModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  $$('.blog-card').forEach(card => {
+    card.addEventListener('click', () => openArticle(card.dataset.article));
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      card.querySelector('.blog-visual')?.style.setProperty('--mx',(e.clientX-r.left)+'px');
+      card.querySelector('.blog-visual')?.style.setProperty('--my',(e.clientY-r.top)+'px');
+    }, {passive:true});
+  });
+
+  $$('.blog-open').forEach(btn => btn.addEventListener('click', e => {
+    e.stopPropagation();
+    openArticle(btn.closest('.blog-card')?.dataset.article);
+  }));
+
+  $$('[data-close-blog]').forEach(el => el.addEventListener('click', closeArticle));
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && blogModal.classList.contains('open')) closeArticle();
+  });
+
+  /* ---------- Quiz ---------- */
+  const quizResult = $('#quizResult');
+  $$('.quiz-btn').forEach(b => b.addEventListener('click', () => {
+    $$('.quiz-btn').forEach(x => x.classList.remove('picked'));
+    b.classList.add('picked');
+    quizResult.textContent = b.dataset.result;
+  }));
+
+  /* ---------- Configurateur de volume ---------- */
+  const ranges = { width:$('#widthRange'), depth:$('#depthRange'), height:$('#heightRange') };
+  function updateVolume(){
+    const w = +ranges.width.value, d = +ranges.depth.value, h = +ranges.height.value;
+    $('#widthValue').textContent = w + ' cm';
+    $('#depthValue').textContent = d + ' cm';
+    $('#heightValue').textContent = h + ' cm';
+    $('#volumeValue').textContent = ((w*d*h)/1e6).toFixed(2).replace('.', ',');
+  }
+  Object.values(ranges).forEach(r => r.addEventListener('input', updateVolume));
+  updateVolume();
+
+  /* ---------- FAQ accordéon ---------- */
+  $$('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      $$('.faq-item.open').forEach(o => {
+        o.classList.remove('open');
+        o.querySelector('.faq-a').style.maxHeight = null;
+        o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!open){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+        q.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  /* ---------- Formulaire → email ---------- */
+  $('#projectForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    const subject = encodeURIComponent('Nouveau projet jard1terieur - ' + f.name.value);
+    const body = encodeURIComponent(
+      'Prénom : ' + f.name.value + '\n' +
+      'Email : ' + f.email.value + '\n' +
+      'Type d\'espace : ' + f.space.value + '\n\n' +
+      'Projet :\n' + f.message.value
+    );
+    window.location.href = 'mailto:jard1terieur@gmail.com?subject=' + subject + '&body=' + body;
+  });
+})();
+</script>
+</body>
+</html>
