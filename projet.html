@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050d08">
+<title>Votre projet · jard1terieur</title>
+<meta name="description" content="Préparez votre premier échange avec jard1terieur grâce à un diagnostic simple de votre espace de culture intérieure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050d08;--bg2:#0a1710;--card:rgba(14,31,20,.72);--text:#f2f7f1;--muted:#a3b4a6;--dim:#6d8172;--mint:#caff9b;--leaf:#65d56a;--line:rgba(202,255,155,.14);--line2:rgba(202,255,155,.3);--font-d:"Fraunces",Georgia,serif;--font-b:"Outfit",Inter,system-ui,sans-serif;--max:1040px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:90px}body{font-family:var(--font-b);color:var(--text);background:linear-gradient(160deg,#050d08,#0a1710 50%,#050f09);min-height:100vh;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.container{width:min(var(--max),calc(100% - 32px));margin:auto}
+.header{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(5,14,9,.94);backdrop-filter:blur(8px)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:800}.mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,var(--mint),var(--leaf));color:#07100c;font-weight:900}.brand em{font-style:normal;color:var(--mint)}.back{font-size:.82rem;color:var(--muted);font-weight:700}.back:hover{color:var(--mint)}
+.hero{padding:72px 0 38px}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:8px 13px;color:var(--mint);font-size:.68rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--leaf);box-shadow:0 0 12px var(--leaf)}h1,h2{font-family:var(--font-d)}h1{font-size:clamp(2.8rem,6vw,5rem);line-height:.98;letter-spacing:-.035em;margin-top:22px;font-weight:560}h1 em{color:var(--mint);font-style:italic;font-weight:480}.hero p{max-width:720px;color:var(--muted);font-size:1.04rem;line-height:1.75;margin-top:22px}.hero strong{color:var(--text)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:22px;align-items:start;padding-bottom:80px}.form-card,.side-card{border:1px solid var(--line);border-radius:24px;background:var(--card);box-shadow:0 20px 70px rgba(0,0,0,.25)}.form-card{padding:30px}.side-card{padding:22px;position:sticky;top:94px}.side-card h3{font-family:var(--font-d);font-size:1.45rem;margin-bottom:10px}.side-card p{color:var(--muted);line-height:1.65;font-size:.86rem}.steps{display:grid;gap:10px;margin-top:20px}.step{display:flex;gap:10px;align-items:center;color:#8fa392;font-size:.75rem;font-weight:800}.step b{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);color:var(--mint);font-size:.68rem}.note{margin-top:18px;padding:13px 14px;border-left:3px solid var(--leaf);background:rgba(101,213,106,.055);border-radius:0 12px 12px 0;color:#b8c8ba;font-size:.78rem;line-height:1.6}
+.section{padding:24px 0 8px}.section:first-child{padding-top:0}.section-title{display:flex;align-items:end;justify-content:space-between;gap:20px;padding-bottom:16px;margin-bottom:18px;border-bottom:1px solid rgba(255,255,255,.06)}.section-title h2{font-size:1.65rem;font-weight:560}.section-title span{color:var(--dim);font-size:.68rem;font-weight:900;letter-spacing:.12em}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.73rem;color:#b9c8bb;font-weight:800}.required{color:var(--mint)}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:rgba(3,12,7,.62);color:var(--text);border-radius:13px;padding:13px 14px;outline:none;transition:border-color .18s,background .18s}.field textarea{min-height:105px;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:#5d7161}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--mint);background:rgba(101,213,106,.045)}.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23caff9b' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}.help{color:var(--dim);font-size:.67rem;line-height:1.45}.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.choice{position:relative}.choice input{position:absolute;opacity:0;pointer-events:none}.choice label{display:flex;align-items:center;min-height:45px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);cursor:pointer;color:#aebeb0;font-size:.78rem;font-weight:700}.choice input:checked+label{border-color:var(--mint);background:rgba(101,213,106,.11);color:var(--mint)}
+.actions{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)}.privacy{color:var(--dim);font-size:.67rem;line-height:1.5}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 21px;border-radius:14px;border:1px solid transparent;font-weight:900;cursor:pointer}.btn-primary{background:linear-gradient(145deg,var(--mint),#8fe07a);color:#06100a;box-shadow:0 12px 28px rgba(121,214,107,.18)}.btn-primary:hover{transform:translateY(-1px)}.success{display:none;margin-top:18px;padding:15px;border:1px solid var(--line2);border-radius:14px;background:rgba(101,213,106,.08);color:#dff4d4;line-height:1.6;font-size:.82rem}.success.show{display:block}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.side-card{position:static}.hero{padding-top:48px}.form-card{padding:22px}}
+@media(max-width:560px){.container{width:min(100% - 24px,var(--max))}.nav{height:64px}.back{font-size:.74rem}.hero{padding:42px 0 25px}h1{font-size:3rem}.grid,.choice-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-title{display:block}.section-title span{display:block;margin-top:5px}.actions{display:grid}.btn{width:100%}.form-card{border-radius:19px}.side-card{border-radius:19px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header class="header"><nav class="nav container"><a class="brand" href="index.html"><span class="mark">j1</span><span>jard<em>1</em>terieur</span></a><a class="back" href="index.html">← Retour au site</a></nav></header>
+<main>
+<section class="hero"><div class="container"><div class="eyebrow"><span class="dot"></span> Diagnostic initial</div><h1>Votre espace, <em>notre point de départ.</em></h1><p>Ce premier formulaire nous permet de comprendre rapidement votre environnement et vos besoins avant notre échange. Pas besoin de tout connaître : si une information vous échappe, indiquez simplement <strong>« je ne sais pas »</strong>.</p></div></section>
+<div class="container layout">
+<form class="form-card" id="projectForm">
+<section class="section"><div class="section-title"><h2>1. Vous</h2><span>CONTACT</span></div><div class="grid">
+<div class="field"><label for="name">Prénom <span class="required">*</span></label><input id="name" name="name" autocomplete="given-name" required placeholder="Votre prénom"></div>
+<div class="field"><label for="email">Email <span class="required">*</span></label><input id="email" name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr"></div>
+<div class="field"><label for="phone">Téléphone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Optionnel"></div>
+<div class="field"><label for="city">Ville / secteur</label><input id="city" name="city" autocomplete="address-level2" placeholder="Ex. Paris 11e"></div>
+</div></section>
+<section class="section"><div class="section-title"><h2>2. Votre espace</h2><span>DIMENSIONS &amp; ENVIRONNEMENT</span></div><div class="grid">
+<div class="field"><label for="space">Type d'espace <span class="required">*</span></label><select id="space" name="space" required><option value="" disabled selected>Sélectionner</option><option>Studio / petit espace</option><option>Appartement</option><option>Maison</option><option>Pièce dédiée</option><option>Garage / cellier</option><option>Autre</option></select></div>
+<div class="field"><label for="spaceUse">Emplacement prévu</label><input id="spaceUse" name="spaceUse" placeholder="Ex. chambre, salon, balcon fermé…"></div>
+<div class="field"><label for="width">Largeur disponible</label><input id="width" name="width" inputmode="decimal" placeholder="Ex. 120 cm"></div>
+<div class="field"><label for="depth">Profondeur disponible</label><input id="depth" name="depth" inputmode="decimal" placeholder="Ex. 60 cm"></div>
+<div class="field"><label for="height">Hauteur disponible</label><input id="height" name="height" inputmode="decimal" placeholder="Ex. 220 cm"></div>
+<div class="field"><label for="surface">Surface approximative</label><input id="surface" name="surface" inputmode="decimal" placeholder="Ex. 1,5 m²"></div>
+<div class="field full"><label>Contraintes déjà identifiées</label><div class="choice-grid">
+<div class="choice"><input id="c1" type="checkbox" name="constraints" value="Bruit"><label for="c1">🔇 Bruit</label></div><div class="choice"><input id="c2" type="checkbox" name="constraints" value="Chaleur"><label for="c2">🌡️ Chaleur</label></div><div class="choice"><input id="c3" type="checkbox" name="constraints" value="Odeur"><label for="c3">🌿 Odeurs</label></div><div class="choice"><input id="c4" type="checkbox" name="constraints" value="Discrétion"><label for="c4">◌ Discrétion</label></div><div class="choice"><input id="c5" type="checkbox" name="constraints" value="Électricité"><label for="c5">⚡ Électricité</label></div><div class="choice"><input id="c6" type="checkbox" name="constraints" value="Aucune"><label for="c6">✓ Aucune particulière</label></div>
+</div></div>
+</div></section>
+<section class="section"><div class="section-title"><h2>3. Vos plantes</h2><span>CULTURE</span></div><div class="grid">
+<div class="field full"><label for="plants">Quelles plantes cultivez-vous ou souhaitez-vous cultiver ? <span class="required">*</span></label><textarea id="plants" name="plants" required placeholder="Ex. plantes aromatiques, tomates, piments, plantes tropicales, semis…"></textarea><span class="help">Vous pouvez simplement lister les espèces ou familles de plantes.</span></div>
+<div class="field"><label for="experience">Votre expérience</label><select id="experience" name="experience"><option value="">Sélectionner</option><option>Débutant</option><option>Quelques expériences</option><option>Habitué</option><option>Très expérimenté</option></select></div>
+<div class="field"><label for="culture">Mode de culture envisagé</label><select id="culture" name="culture"><option value="">Je ne sais pas encore</option><option>Terreau / substrat</option><option>Coco / substrat</option><option>Hydroponie</option><option>Je ne sais pas encore</option></select></div>
+</div></section>
+<section class="section"><div class="section-title"><h2>4. Environnement</h2><span>LUMIÈRE · AIR · EAU</span></div><div class="grid">
+<div class="field"><label for="light">Lumière naturelle</label><select id="light" name="light"><option value="">Je ne sais pas encore</option><option>Très faible</option><option>Faible</option><option>Moyenne</option><option>Forte</option><option>Très forte / soleil direct</option></select></div>
+<div class="field"><label for="window">Fenêtre à proximité</label><select id="window" name="window"><option value="">Sélectionner</option><option>Oui</option><option>Non</option><option>Je ne sais pas</option></select></div>
+<div class="field"><label for="power">Prise électrique à proximité</label><select id="power" name="power"><option value="">Sélectionner</option><option>Oui</option><option>Non</option><option>Je ne sais pas</option></select></div>
+<div class="field"><label for="ventilation">Ventilation / extraction existante</label><select id="ventilation" name="ventilation"><option value="">Sélectionner</option><option>Oui</option><option>Non</option><option>Je ne sais pas</option></select></div>
+</div></section>
+<section class="section"><div class="section-title"><h2>5. Votre objectif</h2><span>PROJET</span></div><div class="grid">
+<div class="field"><label for="goal">Priorité principale</label><select id="goal" name="goal"><option value="">Sélectionner</option><option>Produire davantage</option><option>Gagner de la place</option><option>Améliorer les conditions</option><option>Automatiser</option><option>Créer un espace esthétique</option><option>Être accompagné de A à Z</option></select></div>
+<div class="field"><label for="budget">Budget envisagé</label><select id="budget" name="budget"><option value="">Je préfère en discuter</option><option>Moins de 300 €</option><option>300 – 600 €</option><option>600 – 1 000 €</option><option>1 000 – 2 000 €</option><option>2 000 € et +</option></select></div>
+<div class="field full"><label for="message">Ce que vous aimeriez obtenir</label><textarea id="message" name="message" placeholder="Vos attentes, contraintes, questions ou idées…"></textarea></div>
+</div></section>
+<div class="actions"><div class="privacy">Les informations sont utilisées uniquement pour préparer votre premier échange.<br>Aucune donnée n'est enregistrée par cette page.</div><button class="btn btn-primary" type="submit">Préparer mon projet →</button></div>
+<div class="success" id="success" role="status">Votre demande est prête. Votre logiciel email va s'ouvrir avec toutes les informations du diagnostic.</div>
+</form>
+<aside class="side-card"><h3>Un premier échange simple.</h3><p>Nous ne cherchons pas à vous faire remplir un dossier interminable. L'objectif est d'avoir assez de contexte pour vous répondre intelligemment dès le premier contact.</p><div class="steps"><div class="step"><b>1</b> Vous décrivez votre espace</div><div class="step"><b>2</b> Nous analysons les contraintes</div><div class="step"><b>3</b> Nous échangeons sur votre projet</div></div><div class="note">💡 Une mesure approximative vaut mieux qu'un champ laissé vide. Et si vous ne savez pas, dites-le simplement.</div></aside>
+</div>
+</main>
+<script>
+(function(){
+'use strict';
+const form=document.getElementById('projectForm');
+const success=document.getElementById('success');
+function values(name){return [...form.querySelectorAll(`[name="${name}"]:checked`)].map(x=>x.value).join(', ')||'Aucune';}
+form.addEventListener('submit',function(e){
+ e.preventDefault();
+ if(!form.reportValidity()) return;
+ const f=new FormData(form);
+ const lines=[
+  'NOUVEAU PROJET JARD1TERIEUR','',
+  '--- CONTACT ---',`Prénom : ${f.get('name')}`,`Email : ${f.get('email')}`,`Téléphone : ${f.get('phone')||'Non renseigné'}`,`Ville / secteur : ${f.get('city')||'Non renseigné'}`,'',
+  '--- ESPACE ---',`Type : ${f.get('space')}`,`Emplacement : ${f.get('spaceUse')||'Non renseigné'}`,`Largeur : ${f.get('width')||'Non renseignée'}`,`Profondeur : ${f.get('depth')||'Non renseignée'}`,`Hauteur : ${f.get('height')||'Non renseignée'}`,`Surface : ${f.get('surface')||'Non renseignée'}`,`Contraintes : ${values('constraints')}`,'',
+  '--- PLANTES ---',`Plantes : ${f.get('plants')}`,`Expérience : ${f.get('experience')||'Non renseignée'}`,`Culture : ${f.get('culture')||'Non renseignée'}`,'',
+  '--- ENVIRONNEMENT ---',`Lumière naturelle : ${f.get('light')||'Non renseignée'}`,`Fenêtre : ${f.get('window')||'Non renseigné'}`,`Prise électrique : ${f.get('power')||'Non renseignée'}`,`Ventilation / extraction : ${f.get('ventilation')||'Non renseignée'}`,'',
+  '--- OBJECTIF ---',`Priorité : ${f.get('goal')||'Non renseignée'}`,`Budget : ${f.get('budget')||'À discuter'}`,`Message : ${f.get('message')||'Aucun message supplémentaire'}`
+ ];
+ const subject=encodeURIComponent('Diagnostic projet jard1terieur - '+f.get('name'));
+ const body=encodeURIComponent(lines.join('\n'));
+ success.classList.add('show');
+ window.location.href='mailto:jard1terieur@gmail.com?subject='+subject+'&body='+body;
+});
+})();
+</script>
+</body>
+</html>
